@@ -4,11 +4,11 @@ import NavigationBar from '../Dashbord/NavigationBar/NavigationBar'
 
 const DashboardLayout = () => {
   return (
-    <div className=''>
+    <div className='relative '>
       {/* Sidebar Component */}
       <NavigationBar/>
       <div className=''>
-        <div className='p-5'>
+        <div className='p-1'>
           {/* Outlet for dynamic contents */}
           <Outlet />
         </div>

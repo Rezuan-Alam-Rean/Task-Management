@@ -9,6 +9,10 @@ import MainLayout from '../layouts/MainLayout'
 import Home from '../Home/Home'
 import Login from '../Home/Login/Login'
 import Register from '../Home/Register/Register'
+import TaskList from '../Dashbord/TaskList/TaskList'
+import AddTask from '../Dashbord/AddTask/AddTask'
+import TaskManagement from '../Dashbord/TaskManagement/TaskManagement'
+import UpdateTask from '../Dashbord/TaskManagement/UpdateTask'
 
 export const router = createBrowserRouter([
   {
@@ -35,7 +39,7 @@ export const router = createBrowserRouter([
   },
 
   {
-    path: '/dashboard',
+    path: 'dashboard',
     element: (
      
         <DashboardLayout></DashboardLayout>
@@ -44,19 +48,25 @@ export const router = createBrowserRouter([
     children: [
       
       
-    //   {
-    //     path:'/',
-    //     element:
-    // },
-    // {
-    //     path:'/addTask',
-    //     element:
+      {
+        path:'alltask',
+        element:<TaskList></TaskList>
+    },
+    {
+        path:'addTask',
+        element:<AddTask></AddTask>,
 
-    // },
-    // {
-    //     path:'/manageTask',
-    //     element:
-    // },
+    },
+    {
+        path:'manageTask',
+        element:<TaskManagement></TaskManagement>
+    },
+    {
+      path:'update/:id',
+        element:<UpdateTask></UpdateTask>,
+        loader:({params})=>fetch(`https://task-management-server-tan.vercel.app/updateTask/${params.id}`)
+    }
+   
     ],
   },
   

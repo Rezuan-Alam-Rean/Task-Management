@@ -16,28 +16,31 @@ const NavigationBar = () => {
         bg="dark"
         variant="dark"
       >
-        <Navbar.Brand className="fs-2" to="/">
+        <Navbar.Brand className="fs-2" to="dashboard">
           Task-Management
         </Navbar.Brand>
+
+       
+
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto ">
               <NavLink
                 className="text-decoration-none text-light  fs-5  "
-                to="/"
+                to="alltask"
               >
                 Task-List
               </NavLink>
 
               <NavLink
-                to="/addTask"
+                to="addTask"
                 className="text-decoration-none ms-3 text-light fs-5 "
               >
                 Add-Task
               </NavLink>
               <NavLink
-                to="/manageTask"
+                to="manageTask"
                 className="text-decoration-none ms-3 text-light fs-5 "
               >
                 Manage-Task
@@ -46,6 +49,12 @@ const NavigationBar = () => {
      
           </Navbar.Collapse>
         </Container>
+        <NavLink
+                className="text-decoration-none btn bg-red-800 text-light  fs-5  "
+                to="/"
+              >
+                Home
+              </NavLink>
       </Navbar>
     </div>
   );
