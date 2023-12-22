@@ -1,17 +1,22 @@
-/* eslint-disable react/prop-types */
+import  { useContext } from 'react';
 
-import { Navigate, useLocation } from "react-router-dom"
-import useAuth from "../hooks/useAuth"
-import Loader from "../components/Shared/Loader"
+import { Spinner } from 'react-bootstrap';
+import { Navigate, useLocation } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
+const PrivetRoute = ({children}) => {
+    const {loader,user} =useContext(AuthContext)
+    const location = useLocation();
 
-const PrivateRoute = ({ children }) => {
-  const { user, loading } = useAuth()
-  const location = useLocation()
-  console.log(loading)
-  if (loading) return <Loader />
-  if (user) return children
-  return <Navigate to='/login' state={{ from: location }} replace='true' />
-}
+    if(loader){
+        return <div className='d-flex justify-content-center mt-5 mb-5'><Spinner  animation="border" variant="secondary" /></div>
+    }
+    
+      if (user) {
+        return children;
+      }
 
-export default PrivateRoute
+    return <Navigate to="/login" state={{ from: location }} replace></Navigate>
+};
+
+export default PrivetRoute;

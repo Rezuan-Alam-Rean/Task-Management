@@ -10,7 +10,7 @@ const NavigationBar = () => {
   return (
     <div>
       <Navbar
-        className="  p-3 "
+        className="  p-1 "
         collapseOnSelect
         expand="lg"
         bg="dark"
@@ -27,7 +27,7 @@ const NavigationBar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto ">
               <NavLink
-                className="text-decoration-none text-light  fs-5  "
+                className="text-decoration-none btn text-light  fs-5  "
                 to="alltask"
               >
                 Task-List
@@ -35,13 +35,13 @@ const NavigationBar = () => {
 
               <NavLink
                 to="addTask"
-                className="text-decoration-none ms-3 text-light fs-5 "
+                className="text-decoration-none btn ms-3 text-light fs-5 "
               >
                 Add-Task
               </NavLink>
               <NavLink
                 to="manageTask"
-                className="text-decoration-none ms-3 text-light fs-5 "
+                className="text-decoration-none btn ms-3 text-light fs-5 "
               >
                 Manage-Task
               </NavLink>

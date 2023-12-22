@@ -12,7 +12,7 @@ const Navbar = () => {
           <div className='flex flex-row  items-center justify-between gap-3 md:gap-0'>
             {/* Logo */}
             
-                <p className='text-lg text-red-700 font-extrabold'>📝task</p>
+                <p className='text-lg text-black font-extrabold'>📝task</p>
             
 
             <div className='hidden md:flex' >

@@ -13,6 +13,7 @@ import TaskList from '../Dashbord/TaskList/TaskList'
 import AddTask from '../Dashbord/AddTask/AddTask'
 import TaskManagement from '../Dashbord/TaskManagement/TaskManagement'
 import UpdateTask from '../Dashbord/TaskManagement/UpdateTask'
+import PrivateRoute from './PrivateRoute'
 
 export const router = createBrowserRouter([
   {
@@ -42,7 +43,10 @@ export const router = createBrowserRouter([
     path: 'dashboard',
     element: (
      
-        <DashboardLayout></DashboardLayout>
+
+       <DashboardLayout></DashboardLayout>
+
+     
       
     ),
     children: [
@@ -50,11 +54,22 @@ export const router = createBrowserRouter([
       
       {
         path:'alltask',
-        element:<TaskList></TaskList>
+        element: <PrivateRoute>
+       
+       <TaskList></TaskList>
+       
+        </PrivateRoute>  
+          
     },
     {
         path:'addTask',
-        element:<AddTask></AddTask>,
+        element:  <PrivateRoute>
+
+          <AddTask></AddTask>,
+
+        </PrivateRoute>
+        
+        
 
     },
     {
