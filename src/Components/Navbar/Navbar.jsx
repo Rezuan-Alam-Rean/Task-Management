@@ -11,24 +11,31 @@ const Navbar = () => {
        
           <div className='flex flex-row  items-center justify-between gap-3 md:gap-0'>
             {/* Logo */}
-            <Link to='/'>
             
-            </Link>
+                <p className='text-lg text-red-700 font-extrabold'>📝task</p>
+            
 
             <div className='hidden md:flex' >
             <Link
               to='/'
-              className='  px-4 py-3 text-red-500  hover:bg-slate-700 transition font-bold'
+              className='  px-4 py-3 text-red-500 text-decoration-none hover:bg-slate-700 transition font-bold'
             >
               Home
             </Link>
 
             <Link
-              to='/Apartment'
-              className='px-4 py-3 text-red-500  hover:bg-slate-700 transition font-bold'
+              to='dashboard/alltask'
+              className='px-4 py-3 text-red-500 text-decoration-none hover:bg-slate-700 transition font-bold'
             >
-              Apartments
+              All Tasks
             </Link>
+            <Link
+              to='dashboard/addTask'
+              className='px-4 py-3 text-decoration-none text-red-500  hover:bg-slate-700 transition font-bold'
+            >
+              add Task
+            </Link>
+           
             </div>
 
             {/* Dropdown Menu */}

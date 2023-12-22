@@ -18,7 +18,8 @@ const MenuDropdown = () => {
         {/* Become A Host btn */}
         <div className=' md:block'>
          <p className='text-lg font-extrabold font-serif'>
-         Putul's Paradise
+         Task-Management
+
        </p>
        </div>
         {/* Dropdown btn */}
@@ -49,23 +50,29 @@ const MenuDropdown = () => {
 
           <Link
             to='/'
-            className='block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+            className='block md:hidden px-4 py-3 text-decoration-none hover:bg-neutral-100 transition font-semibold'
           >
             Home
           </Link>
 
           <Link
-            to='/Apartment'
-            className='block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+            to='dashboard/alltask'
+            className='block md:hidden px-4 py-3 text-decoration-none hover:bg-neutral-100 transition font-semibold'
           >
-            Apartments
+           All Task
           </Link>
+          <Link
+              to='dashboard/addTask'
+              className='px-4 block md:hidden py-3 text-decoration-none text-red-500  hover:bg-slate-700 transition font-bold'
+            >
+              add Task
+            </Link>
 
             {user ? (
               <>
                 <Link
                   to='/dashboard'
-                  className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                  className='px-4 py-3 text-decoration-none text-red-600 hover:bg-neutral-100 transition font-semibold'
                 >
                   Dashboard
                 </Link>
